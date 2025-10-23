@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Crummble Cookies 🍪</title>
+
+  <meta name="google-site-verification" content="cLJB7GgPsFvy5uf1lLxA4dsvXbodcGL6xLP1H0bzDoA" />
+  
+  <style>
+    body {
+      margin: 0;
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background: linear-gradient(180deg, #ffe8f3, #fff7f1);
+      overflow: hidden;
+      font-family: "Poppins", sans-serif;
+    }
+
+    .container {
+      text-align: center;
+      animation: fadeIn 2s ease forwards;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    .box {
+      width: 150px;
+      height: 150px;
+      margin: 0 auto 20px;
+      position: relative;
+      transform-style: preserve-3d;
+      animation: spin 6s infinite linear;
+    }
+
+    @keyframes spin {
+      from { transform: rotateY(0deg); }
+      to { transform: rotateY(360deg); }
+    }
+
+    .face {
+      position: absolute;
+      width: 150px;
+      height: 150px;
+      background: linear-gradient(145deg, #ffd1e3, #ffc3b1);
+      border-radius: 12px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    }
+
+    .face.front { transform: translateZ(75px); }
+    .face.back { transform: rotateY(180deg) translateZ(75px); }
+    .face.left { transform: rotateY(-90deg) translateZ(75px); }
+    .face.right { transform: rotateY(90deg) translateZ(75px); }
+    .face.top { transform: rotateX(90deg) translateZ(75px); background: #fff3f7; }
+    .face.bottom { transform: rotateX(-90deg) translateZ(75px); }
+
+    h1 {
+      color: #ff7fa3;
+      font-size: 28px;
+      font-weight: 700;
+      text-shadow: 1px 2px #fff;
+      animation: pop 2s ease;
+    }
+
+    @keyframes pop {
+      0% { transform: scale(0.5); opacity: 0; }
+      100% { transform: scale(1); opacity: 1; }
+    }
+
+    .btn {
+      display: inline-block;
+      margin-top: 15px;
+      background: #ff9eb3;
+      color: white;
+      padding: 12px 30px;
+      border-radius: 30px;
+      text-decoration: none;
+      font-weight: 600;
+      box-shadow: 0 4px 10px rgba(255, 126, 150, 0.3);
+      transition: all 0.3s ease;
+    }
+
+    .btn:hover {
+      background: #ff7fa3;
+      transform: scale(1.05);
+    }
+
+    .cookies {
+      position: absolute;
+      font-size: 22px;
+      animation: float 3s infinite ease-in-out;
+    }
+
+    @keyframes float {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-10px); }
+    }
+
+    .cookie1 { top: 30%; left: 20%; animation-delay: 0.2s; }
+    .cookie2 { top: 40%; right: 20%; animation-delay: 0.6s; }
+    .cookie3 { bottom: 25%; left: 50%; animation-delay: 1s; }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="box">
+      <div class="face front"></div>
+      <div class="face back"></div>
+      <div class="face left"></div>
+      <div class="face right"></div>
+      <div class="face top"></div>
+      <div class="face bottom"></div>
+    </div>
+
+    <h1>Selamat Datang di<br>Crummble Cookies 🍪</h1>
+    <a href="./cookies.html" class="btn">Masuk ke Toko 🍰</a>
+
+    <div class="cookies cookie1">🍪</div>
+    <div class="cookies cookie2">🧁</div>
+    <div class="cookies cookie3"></div>
+  </div>
+</body>
+</html>
